@@ -1,0 +1,17 @@
+<h1>Polling Unit Results</h1>
+
+
+<table>
+    <tr>
+        <th>Contesting Parties</th>
+        <th></th>
+    </tr>
+    {% for task in PuResults %}
+    <tr>
+        <td>{{task.party_abbreviation}}</td>
+        <td><a href="{% url 'polling-unit' task.id %}">More Info</a></td>
+    </tr>
+    {% empty %}
+    <h3>No polling units in the area</h3>
+    {% endfor %}
+</table>

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method="GET" action="{% url 'index' %}">
+    {{ form.as_p }}
+    <input type="submit" value="Submit" class="btn btn-primary" />
+</form>
+
+<br>
+
+<h1>Election Results<h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Polling unit id</th>
+                    <th>Party</th>
+                    <th>Party Score</th>
+                    <th>Poll Agent</th>
+                    <th>Date</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for poll in polls %}
+                <tr>
+                    <td>{{ poll.result_id }}</td>
+                    <td>{{ poll.polling_unit_uniqueid }}</td>
+                    <td>{{ poll.party_abbreviation }}</td>
+                    <td>{{ poll.party_score }}</td>
+                    <td>{{ poll.entered_by_user }}</td>
+                    <td>{{ poll.date_entered }}</td>
+                    <td>{{ poll.user_ip_address }}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <hr />
+
+        <h1><a href="{% url 'results' %}">Party Results</a></h1>
+
+        <br />
+
+        <h1> Result submission for new polling units</h1>
+        <h3><a href="{% url 'create' %}">Go to page</a></h3>
+
+        <hr />
+
+
+        {% endblock %}

@@ -1,0 +1,34 @@
+{%extends 'base.html' %}
+
+{% block content %}
+
+<h2>Local Government Party Results</h2>
+<br />
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <h2>Total result of all votes casted in LGA</h2>
+            <th>{{ score }}</th>
+        </tr>
+    </thead>
+</table>
+
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <h2>Total results of each political party votes</h2>
+            <th>{{ party }}</th>
+        </tr>
+    </thead>
+</table>
+
+<h2><a href="{% url 'create' %}">Click</a> for result submission for new polling units</h2>
+
+<h2><a href="{% url 'index' %}">Home</a></h2>
+
+{% endblock %}
