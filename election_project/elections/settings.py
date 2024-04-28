@@ -88,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'elections',
-        'USER': 'postgres',
-        'PASSWORD': 'fosaasterka21',
+        'USER': '*******',
+        'PASSWORD': '**********',
         'HOST': 'localhost'
     }
 }
